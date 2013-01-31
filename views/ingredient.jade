@@ -1,0 +1,8 @@
+extends layout
+
+block content
+	h1 The contents of your Kitchen
+	p Ingredients
+	div 
+		each ingredient, i in ingredients
+			div(value=ingredient) Ingredient: #{ingredient.name} with price #{ingredient.cost}

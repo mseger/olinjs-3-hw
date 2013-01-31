@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	h1 We know you're limited...
+	p Go on, create a new ingredient to add to your kitchen!
+	div 
+		form(name="input", action="/ingredient/new", method="post")
+			| Ingredient Name:
+			input(type="text", name="name")
+			| Ingredient Price:
+			input(type="text", name="cost")
+
+			input(type="submit", value="Create new Ingredient")
