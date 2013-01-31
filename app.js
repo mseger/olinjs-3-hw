@@ -35,7 +35,7 @@ app.get('/users', user.list);
 app.get('/ingredient', ingredient.list);
 app.get('/ingredient/new', ingredient.create);
 app.get('/ingredient/delete_all', ingredient.delete_all);
-app.get('/order', order.list);
+app.get('/orders', order.list);
 app.get('/order/new', order.create);
 
 // POSTS

@@ -3,10 +3,20 @@ extends layout
 block content
 	h1 Order Form
 	p Please place a new Order
-	div
-		each ingredient, i in ingredients
-			div(value=ingredient) 
-				input(type="checkbox", name=#{ingredient.name})
-				Add #{ingredient.name}
+	div 
+		form(name="input", action="/order/new", method="post")
+			| Customer Name:
+			input(type="text", name="name")
+			br
+			br
+			| Ingredients to add: 
+			div
 				br
-		input(type="submit", value="Order Now")
+				each ingredient, i in ingredients
+					div(value=ingredient) 
+						input(type="checkbox", name=#{ingredient.name})
+						Add #{ingredient.name}
+						br
+			br
+			input(type="submit", value="Order Now")
+
