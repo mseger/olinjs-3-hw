@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	h1 The Order
+	p All Orders Placed
+	div
+		each order, i in orders
+			div(value=order) Customer: #{order.customerName} with ingredients:
+				each ingredient, j in order.ingredients
+					div(value=ingredient) Ingredient: #{ingredient.name} 

@@ -7,6 +7,7 @@ var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , ingredient = require('./routes/ingredient')
+  , order = require('./routes/order')
   , http = require('http')
   , path = require('path');
 
@@ -34,9 +35,12 @@ app.get('/users', user.list);
 app.get('/ingredient', ingredient.list);
 app.get('/ingredient/new', ingredient.create);
 app.get('/ingredient/delete_all', ingredient.delete_all);
+app.get('/order', order.list);
+app.get('/order/new', order.create);
 
 // POSTS
 app.post('/ingredient/new', ingredient.create_post);
+app.post('/order/new', order.create_post);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
