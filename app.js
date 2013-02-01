@@ -9,7 +9,8 @@ var express = require('express')
   , ingredient = require('./routes/ingredient')
   , order = require('./routes/order')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , mongoose = require('mongoose');
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.configure(function(){
 
 app.configure('development', function(){
   app.use(express.errorHandler());
+  mongoose.connect(process.env.MONGOLAB_URI || 'localhost');
 });
 
 // GETS

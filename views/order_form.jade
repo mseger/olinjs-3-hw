@@ -14,8 +14,8 @@ block content
 				br
 				each ingredient, i in ingredients
 					div(value=ingredient) 
-						input(type="checkbox", name=#{ingredient.name})
-						Add #{ingredient.name}
+						input(type="checkbox", name="ingredients", value= '#{ingredient._id}')
+						| #{ingredient.name}
 						br
 			br
 			input(type="submit", value="Order Now")

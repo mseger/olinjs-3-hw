@@ -1,7 +1,6 @@
-var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGOLAB_URI || 'localhost');
+var mongoose = require('mongoose'), Schema = mongoose.Schema
 
-var ingredientSchema = mongoose.Schema({
+var ingredientSchema = new Schema({
 	name: String, 
 	cost: Number
 });

@@ -4,7 +4,7 @@ var Ingredient = require('../models/ingredient')
 // show all orders
 exports.list = function(req, res){
 	// get the list of cats
-	var orders = Order.find({}).exec(function (err, docs){
+	var orders = Order.find({}).populate('ingredients').exec(function (err, docs){
 		if(err)
 			return console.log("error with grabbing orders", orders);
 		// send it back
