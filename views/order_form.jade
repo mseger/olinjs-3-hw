@@ -4,7 +4,7 @@ block content
 	h1 Order Form
 	p Please place a new Order
 	div 
-		form(name="input", action="/order/new", method="post")
+		form(name="input", action="/order/new", method="post", id="order_form")
 			| Customer Name:
 			input(type="text", name="name")
 			br
@@ -13,7 +13,7 @@ block content
 			div
 				br
 				each ingredient, i in ingredients
-					div(value=ingredient) 
+					div(value=ingredient, id="ingredient") 
 						input(type="checkbox", name="ingredients", value= '#{ingredient._id}')
 						| #{ingredient.name}
 						br

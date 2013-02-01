@@ -38,3 +38,20 @@ exports.create_post = function(req, res){
 
 
 // delete all orders in the db
+exports.delete_all = function(req, res){
+	// clears out your list so you can start from scratch
+	Order.remove({}, function(err) { 
+   		console.log('collection removed');
+   		res.redirect('/orders');
+	});
+};
+
+// "complete" (ie. delete) a single order by index
+exports.index_delete = function(req, res){
+	// complete individual orders
+	var orders = Order.findOneAndRemove({_id: req.params.id}).exec(function (err, docs){
+		if(err)
+			return console.log("cannot retrieve orders")
+		res.redirect('/orders')
+	});
+};
