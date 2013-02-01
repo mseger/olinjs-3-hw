@@ -44,7 +44,7 @@ app.get('/orders/delete_all', order.delete_all);
 // POSTS
 app.post('/ingredient/new', ingredient.create_post);
 app.post('/order/new', order.create_post);
-app.post('/orders/delete/:id', order.index_delete); // only reached when you click on an "order completed" button
+app.post('/orders/delete', order.index_delete); // only reached when you click on an "order completed" button
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

@@ -49,7 +49,7 @@ exports.delete_all = function(req, res){
 // "complete" (ie. delete) a single order by index
 exports.index_delete = function(req, res){
 	// complete individual orders
-	var orders = Order.findOneAndRemove({_id: req.params.id}).exec(function (err, docs){
+	var orders = Order.findOneAndRemove({_id: req.body.id}).exec(function (err, docs){
 		if(err)
 			return console.log("cannot retrieve orders")
 		res.redirect('/orders')

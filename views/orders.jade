@@ -5,10 +5,11 @@ block content
 	p All Orders Placed
 	div
 		each order, i in orders
-			div(value=order) Customer #{order.customerName} with ingredients:
+			div(value=order, id="order_id") Customer #{order.customerName} with ingredients:
 				each ingredient, j in order.ingredients
 					div(value=ingredient) #{ingredient.name} 
-				form(method='post', action='/orders/delete/' + i)
+				form(class='deleteOrder', method='post', action='/orders/delete')
+					input(type="hidden", value="#{order._id}", name="id")
 					button
 						| Order Completed
 				br
